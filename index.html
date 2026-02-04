@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Brand_Of_Sacrafice.jpg" type="image/x-icon">
+    <title>Pascal Hocher - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Profile Picture (Easter Egg Trigger) -->
+    <header>
+        <div class="header-content">
+            <h1>Pascal Hocher</h1>
+            <div class="profile-pic" id="easterEggTrigger" title="Click me... a lot!">
+                <img src="./img/Brand_Of_Sacrafice.jpg" alt="Profile" class="profile-image">
+            </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle">💖 Astolfo Theme</button>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav>
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#about" class="nav-link active">About Me</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#quote" class="nav-link">Quote</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="card">
+                    <p><strong>Name:</strong> Pascal</p>
+                    <p><strong>Age:</strong> 17</p>
+                    <p><strong>Current:</strong> Apprenticeship in Software Engineering</p>
+                    <p><strong>Status:</strong> Happily taken (I love my girlfriend) 💕</p>
+                    <p><strong>Hobbies:</strong> Homelabbing and Sport</p>
+                    <p><strong>Setup:</strong> 3 PCs for various projects</p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/platteXDlol" target="_blank" class="github-link">github.com/platteXDlol</a></p>
+                </div>
+
+                <div class="card">
+                    <h3>Favorite Anime</h3>
+                    <ul class="favorites-list">
+                        <li>📺 Code Geass</li>
+                        <li>🏴‍☠️ One Piece</li>
+                        <li>🏎️ Initial D</li>
+                    </ul>
+                    <p class="peak-genre"><strong>Peak Genre:</strong> Romance Anime Movies (I want to eat your pancreas, 5 centimeters per second, etc.)</p>
+                </div>
+
+                <div class="card">
+                    <h3>Favorite Manga</h3>
+                    <ul class="favorites-list">
+                        <li>⚔️ Berserk</li>
+                        <li>🥋 Vagabond</li>
+                        <li>🌸 Bloom into you</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2>Projects</h2>
+                
+                <div class="card">
+                    <h3>Current Main Projects</h3>
+                    <div class="project-item">
+                        <div class="jellyfin-container">
+                            <div class="jellyfin-content">
+                                <h4>🎬 Jellyfin & *arr-stack</h4>
+                                <p>Building the perfect media server setup with Jellyfin and the complete *arr stack (Sonarr, Radarr, Prowlarr, etc.). The goal is to achieve near-perfection in automation and media management.</p>
+                            </div>
+                            <img src="./img/jellyfin.png" alt="Jellyfin Logo" class="jellyfin-image">
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h4>🤖 Local AI</h4>
+                        <p>Running various AI models locally on my homelab. Experimenting with different models for various use cases while maintaining full control and privacy.</p>
+                    </div>
+                </div>
+
+                <div class="card subpage-container">
+                    <h3>Visit My Jellyfin Setup</h3>
+                    <a href="http://jellyfin.pascalhocher.ch" target="_blank" class="subpage-btn">jellyfin.pascalhocher.ch</a>
+                </div>
+
+                <div class="card">
+                    <h3>Future Projects</h3>
+                    <div class="project-item">
+                        <h4>👻 Pepper's Ghost Display</h4>
+                        <p>Planning to build a Pepper's Ghost holographic display using Raspberry Pi or similar hardware. Considering integration with local AI models for interactive experiences.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery">
+                <h2>Random Pictures</h2>
+                <div class="card">
+                    <div class="gallery-container">
+                        <div class="gallery-image" id="galleryImage">
+                            <div class="placeholder-image">Click the button to see a random picture</div>
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-btn" id="randomBtn">🎲 Show Random Picture</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Section -->
+            <section id="quote">
+                <h2>Random Quote</h2>
+                <div class="card quote-section">
+                    <p class="quote">"sudo apt update && sudo apt install opsec && sudo apt install larp"</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Table of Contents -->
+        <aside class="toc">
+            <h3>On This Page</h3>
+            <ul id="tocList">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#quote">Quote</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Easter Egg Modal -->
+    <div class="easter-egg-modal" id="easterEggModal">
+        <div class="easter-egg-content">
+            <h2>🎉 You Found Me! 🎉</h2>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2pjNGd6dmxvNHIxZDIzamFtN2NycWloNmowOTQ4MXc2YWZxeG4zcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FJ0yDY9uAHzxLeKfIn/giphy.gif" alt="Waving Cat" class="cat-gif">
+            <button class="close-btn" id="closeEasterEgg">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pascal Hocher | Software Engineering Apprentice</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

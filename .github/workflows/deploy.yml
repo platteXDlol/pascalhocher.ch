@@ -22,6 +22,7 @@ jobs:
           username: ${{ secrets.FTP_USER_MAIN }}
           password: ${{ secrets.FTP_PASSWORD_MAIN }}
           server-dir: ./
+          force-upload: true
 
       - name: Deploy to Entw Branch
         if: github.ref == 'refs/heads/entw'

@@ -1,5 +1,4 @@
 name: Deploy to Hostinger
-
 on:
   push:
     branches:
@@ -12,7 +11,14 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
+      
+      - name: Debug Secrets
+        run: |
+          echo "Branch: ${{ github.ref }}"
+          echo "FTP_SERVER exists: ${{ secrets.FTP_SERVER != '' }}"
+          echo "FTP_USER_MAIN exists: ${{ secrets.FTP_USER_MAIN != '' }}"
+          echo "FTP_USER_ENTW exists: ${{ secrets.FTP_USER_ENTW != '' }}"
+      
       - name: Deploy to Main Branch
         if: github.ref == 'refs/heads/main'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -20,8 +26,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER_MAIN }}
           password: ${{ secrets.FTP_PASSWORD_MAIN }}
-          server-dir: ./
-
+          server-dir: /
+      
       - name: Deploy to Entw Branch
         if: github.ref == 'refs/heads/entw'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -29,4 +35,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER_ENTW }}
           password: ${{ secrets.FTP_PASSWORD_ENTW }}
-          server-dir: ./
+          server-dir: /

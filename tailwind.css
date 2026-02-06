@@ -176,18 +176,13 @@ body.funny-theme {
 .jellyfin-container {
     display: grid;
     gap: 1.5rem;
-    align-items: center;
-}
-
-@media (min-width: 1024px) {
-    .jellyfin-container {
-        grid-template-columns: minmax(0, 1fr) 320px;
-    }
+    align-items: start;
+    grid-template-columns: 1fr;
 }
 
 .jellyfin-image {
     width: 100%;
-    max-height: 320px;
+    max-height: 500px;
     object-fit: contain;
     border-radius: 16px;
     border: 1px solid rgba(0, 168, 204, 0.15);

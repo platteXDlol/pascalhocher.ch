@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - entw
+  workflow_dispatch:  # <--- DIESE ZEILE ERZWINGT DEN BUTTON
 
 jobs:
   deploy-main:

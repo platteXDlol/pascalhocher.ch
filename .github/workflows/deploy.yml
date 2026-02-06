@@ -23,6 +23,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_MAIN }}
           server-dir: ./
           security: loose
+          dangerous-clean-slate: true
 
       - name: Deploy to Entw Branch
         if: github.ref == 'refs/heads/entw'

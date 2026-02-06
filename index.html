@@ -8,17 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="tailwind.css">
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <body class="min-h-screen bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 text-blue-100 antialiased">
     <!-- Header with Profile Picture (Easter Egg Trigger) -->
-    <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-900/90 backdrop-blur">
+    <header class="sticky top-0 z-50 border-b border-cyan-500/20 bg-blue-950/80 backdrop-blur-xl shadow-lg shadow-cyan-500/10">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
             <div class="flex items-center gap-4">
                 <div class="profile-pic" id="easterEggTrigger" title="Click me... a lot!">
                     <img src="./img/Brand_Of_Sacrafice.jpg" alt="Profile" class="profile-image">
                 </div>
                 <div>
-                    <h1 class="text-lg font-semibold text-slate-100 sm:text-xl">Pascal Hocher</h1>
-                    <p class="text-xs text-slate-400 sm:text-sm">Software Engineering Apprentice</p>
+                    <h1 class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 sm:text-xl">Pascal Hocher</h1>
+                    <p class="text-xs text-cyan-300/80 sm:text-sm">Application Developer</p>
                 </div>
             </div>
             <button class="theme-toggle" id="themeToggle">💖 Astolfo Theme</button>
@@ -26,13 +26,13 @@
     </header>
 
     <!-- Main Container -->
-    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:px-8 xl:grid-cols-[220px_minmax(0,1fr)_200px] xl:py-12">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 lg:gap-16 lg:grid-cols-[220px_minmax(0,1fr)] lg:px-8 xl:grid-cols-[220px_minmax(0,1fr)_200px] xl:py-16">
         <!-- Sidebar Navigation -->
         <aside class="sidebar hidden lg:block">
             <nav class="sticky top-24">
-                <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Navigation</h3>
+                <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-cyan-400">Navigation</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="#about" class="nav-link">About Me</a></li>
+                    <li><a href="#about" class="nav-link active">About Me</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#quote" class="nav-link">Quote</a></li>
@@ -41,24 +41,24 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="content space-y-12">
+        <main class="content space-y-16">
             <!-- About Section -->
             <section id="about" class="scroll-mt-28">
-                <h2 class="text-2xl font-semibold text-slate-100 sm:text-3xl">About Me</h2>
-                <div class="card">
-                    <div class="grid gap-3 text-sm text-slate-300 sm:grid-cols-2 sm:text-base">
-                        <p><span class="text-slate-400">Name:</span> Pascal</p>
-                        <p><span class="text-slate-400">Age:</span> 17</p>
-                        <p><span class="text-slate-400">Current:</span> Apprenticeship in Software Engineering</p>
-                        <p><span class="text-slate-400">Status:</span> Happily taken (I love my girlfriend) 💕</p>
-                        <p><span class="text-slate-400">Hobbies:</span> Homelabbing and Sport</p>
-                        <p><span class="text-slate-400">Setup:</span> 3 PCs for various projects</p>
-                        <p class="sm:col-span-2"><span class="text-slate-400">GitHub:</span> <a href="https://github.com/platteXDlol" target="_blank" class="github-link">github.com/platteXDlol</a></p>
+                <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 sm:text-4xl mb-6">About Me</h2>
+                <div class="card mb-6">
+                    <div class="grid gap-4 text-sm text-blue-200 sm:grid-cols-2 sm:text-base">
+                        <p><span class="text-cyan-400 font-semibold">Name:</span> Pascal</p>
+                        <p><span class="text-cyan-400 font-semibold">Age:</span> 17</p>
+                        <p><span class="text-cyan-400 font-semibold">Current:</span> Application Developer (apprenticeship)</p>
+                        <p><span class="text-cyan-400 font-semibold">Focus:</span> Clean UI, automation, homelab projects</p>
+                        <p><span class="text-cyan-400 font-semibold">Hobbies:</span> Homelabbing and sport</p>
+                        <p><span class="text-cyan-400 font-semibold">Setup:</span> 3 PCs for various projects</p>
+                        <p class="sm:col-span-2"><span class="text-cyan-400 font-semibold">GitHub:</span> <a href="https://github.com/platteXDlol" target="_blank" class="github-link">github.com/platteXDlol</a></p>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3 class="text-lg font-semibold text-slate-100">Favorite Anime</h3>
+                <div class="card mb-6">
+                    <h3 class="text-lg font-bold text-cyan-300 mb-3">Favorite Anime</h3>
                     <ul class="favorites-list">
                         <li>📺 Code Geass</li>
                         <li>🏴‍☠️ One Piece</li>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="card">
-                    <h3 class="text-lg font-semibold text-slate-100">Favorite Manga</h3>
+                    <h3 class="text-lg font-bold text-cyan-300 mb-3">Favorite Manga</h3>
                     <ul class="favorites-list">
                         <li>⚔️ Berserk</li>
                         <li>🥋 Vagabond</li>
@@ -79,43 +79,43 @@
 
             <!-- Projects Section -->
             <section id="projects" class="scroll-mt-28">
-                <h2 class="text-2xl font-semibold text-slate-100 sm:text-3xl">Projects</h2>
+                <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 sm:text-4xl mb-6">Projects</h2>
                 
-                <div class="card">
-                    <h3 class="text-lg font-semibold text-slate-100">Current Main Projects</h3>
+                <div class="card mb-6">
+                    <h3 class="text-lg font-bold text-cyan-300 mb-4">Current Main Projects</h3>
                     <div class="project-item">
                         <div class="jellyfin-container">
                             <div>
-                                <h4 class="text-base font-semibold text-slate-100">🎬 Jellyfin & *arr-stack</h4>
-                                <p class="mt-2 text-sm text-slate-300 sm:text-base">Building the perfect media server setup with Jellyfin and the complete *arr stack (Sonarr, Radarr, Prowlarr, etc.). The goal is to achieve near-perfection in automation and media management.</p>
+                                <h4 class="text-base font-bold text-cyan-300">🎬 Jellyfin & *arr-stack</h4>
+                                <p class="mt-2 text-sm text-blue-200 sm:text-base">Designing a scalable media server with Jellyfin and the *arr stack (Sonarr, Radarr, Prowlarr). Focused on automation, reliability, and a clean user experience.</p>
                             </div>
                             <img src="./img/jellyfin.png" alt="Jellyfin Logo" class="jellyfin-image">
                         </div>
                     </div>
                     
                     <div class="project-item">
-                        <h4 class="text-base font-semibold text-slate-100">🤖 Local AI</h4>
-                        <p class="mt-2 text-sm text-slate-300 sm:text-base">Running various AI models locally on my homelab. Experimenting with different models for various use cases while maintaining full control and privacy.</p>
+                        <h4 class="text-base font-bold text-cyan-300">🤖 Local AI</h4>
+                        <p class="mt-2 text-sm text-blue-200 sm:text-base">Running local AI workloads in my homelab to experiment with models while keeping data private and infrastructure transparent.</p>
                     </div>
                 </div>
 
-                <div class="card subpage-container">
-                    <h3 class="text-lg font-semibold text-slate-100">Visit My Jellyfin Setup</h3>
+                <div class="card subpage-container mb-6">
+                    <h3 class="text-lg font-bold text-cyan-300 mb-3">Visit My Jellyfin Setup</h3>
                     <a href="http://jellyfin.pascalhocher.ch" target="_blank" class="subpage-btn">jellyfin.pascalhocher.ch</a>
                 </div>
 
                 <div class="card">
-                    <h3 class="text-lg font-semibold text-slate-100">Future Projects</h3>
+                    <h3 class="text-lg font-bold text-cyan-300 mb-4">Future Projects</h3>
                     <div class="project-item">
-                        <h4 class="text-base font-semibold text-slate-100">👻 Pepper's Ghost Display</h4>
-                        <p class="mt-2 text-sm text-slate-300 sm:text-base">Planning to build a Pepper's Ghost holographic display using Raspberry Pi or similar hardware. Considering integration with local AI models for interactive experiences.</p>
+                        <h4 class="text-base font-bold text-cyan-300">👻 Pepper's Ghost Display</h4>
+                        <p class="mt-2 text-sm text-blue-200 sm:text-base">Planning to build a Pepper's Ghost holographic display using Raspberry Pi or similar hardware. Considering integration with local AI models for interactive experiences.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Gallery Section -->
             <section id="gallery" class="scroll-mt-28">
-                <h2 class="text-2xl font-semibold text-slate-100 sm:text-3xl">Random Pictures</h2>
+                <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 sm:text-4xl mb-6">Random Pictures</h2>
                 <div class="card">
                     <div class="space-y-4">
                         <div class="gallery-image" id="galleryImage">
@@ -130,9 +130,9 @@
 
             <!-- Quote Section -->
             <section id="quote" class="scroll-mt-28">
-                <h2 class="text-2xl font-semibold text-slate-100 sm:text-3xl">Random Quote</h2>
+                <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 sm:text-4xl mb-6">Random Quote</h2>
                 <div class="card quote-section">
-                    <p class="quote">"sudo apt update && sudo apt install opsec && sudo apt install larp"</p>
+                    <p class="quote text-blue-200">"sudo apt update && sudo apt install opsec && sudo apt install larp"</p>
                 </div>
             </section>
         </main>
@@ -140,8 +140,8 @@
         <!-- Table of Contents -->
         <aside class="toc hidden xl:block">
             <div class="sticky top-24">
-                <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">On This Page</h3>
-                <ul id="tocList" class="mt-4 space-y-2 text-sm text-slate-400">
+                <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-cyan-400">On This Page</h3>
+                <ul id="tocList" class="mt-4 space-y-2 text-sm text-blue-300/80">
                     <li><a href="#about" class="toc-link">About Me</a></li>
                     <li><a href="#projects" class="toc-link">Projects</a></li>
                     <li><a href="#gallery" class="toc-link">Gallery</a></li>
@@ -154,14 +154,14 @@
     <!-- Easter Egg Modal -->
     <div class="easter-egg-modal" id="easterEggModal">
         <div class="easter-egg-content">
-            <h2 class="text-xl font-semibold text-slate-100">🎉 You Found Me! 🎉</h2>
+            <h2 class="text-xl font-bold text-cyan-300">🎉 You Found Me! 🎉</h2>
             <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2pjNGd6dmxvNHIxZDIzamFtN2NycWloNmowOTQ4MXc2YWZxeG4zcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FJ0yDY9uAHzxLeKfIn/giphy.gif" alt="Waving Cat" class="cat-gif">
             <button class="close-btn" id="closeEasterEgg">Close</button>
         </div>
     </div>
 
-    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-400 sm:text-sm">
-        <p>&copy; 2026 Pascal Hocher | Software Engineering Apprentice</p>
+    <footer class="border-t border-cyan-500/20 py-6 text-center text-xs text-blue-300/60 sm:text-sm">
+        <p>&copy; 2026 Pascal Hocher | Application Developer</p>
     </footer>
 
     <script src="script.js"></script>

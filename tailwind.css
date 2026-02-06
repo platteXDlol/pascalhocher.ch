@@ -1,3 +1,4 @@
+/* Dark Blue Futuristic Theme */
 body.funny-theme::before {
     content: '';
     position: fixed;
@@ -12,7 +13,7 @@ body.funny-theme::before {
 }
 
 body.funny-theme {
-    background-color: #150b1f;
+    background: linear-gradient(135deg, #0d0a25 0%, #1a0f35 50%, #0d0a25 100%);
 }
 
 * {
@@ -23,21 +24,23 @@ body.funny-theme {
     width: 52px;
     height: 52px;
     border-radius: 9999px;
-    border: 2px solid #38bdf8;
+    border: 2px solid #0088bb;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #38bdf8, #34d399);
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0;
     position: relative;
     z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 168, 204, 0.25), inset 0 0 20px rgba(0, 168, 204, 0.08);
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 168, 204, 0.4), inset 0 0 20px rgba(0, 168, 204, 0.15);
 }
 
 .profile-image {
@@ -47,31 +50,43 @@ body.funny-theme {
 }
 
 .theme-toggle {
-    border: 1px solid #1e293b;
-    background: #0f172a;
-    color: #e2e8f0;
+    border: 1px solid rgba(0, 168, 204, 0.4);
+    background: rgba(7, 89, 133, 0.4);
+    color: #0066aa;
     padding: 0.5rem 0.85rem;
     border-radius: 9999px;
     font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
+    font-weight: 700;
+    transition: all 0.3s ease;
     white-space: nowrap;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 15px rgba(0, 168, 204, 0.12);
 }
 
 .theme-toggle:hover {
-    background: #38bdf8;
-    color: #0f172a;
-    border-color: #38bdf8;
+    background: rgba(0, 168, 204, 0.12);
+    color: #0088bb;
+    border-color: #0088bb;
+    box-shadow: 0 0 25px rgba(0, 168, 204, 0.3);
+    transform: translateY(-2px);
 }
 
 .card {
-    background: rgba(15, 23, 42, 0.75);
-    border: 1px solid #1e293b;
+    background: linear-gradient(135deg, rgba(6, 20, 40, 0.8) 0%, rgba(3, 40, 75, 0.5) 100%);
+    border: 1px solid rgba(0, 168, 204, 0.12);
     border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+    padding: 1.6rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(0, 168, 204, 0.06);
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(0, 168, 204, 0.3);
+    box-shadow: 0 12px 48px rgba(0, 168, 204, 0.1), inset 0 1px 0 rgba(0, 168, 204, 0.12);
+    transform: translateY(-4px);
 }
 
 .favorites-list {
@@ -83,44 +98,58 @@ body.funny-theme {
 }
 
 .favorites-list li {
-    padding: 0.5rem 0.75rem;
+    padding: 0.6rem 0.85rem;
     border-radius: 10px;
-    background: rgba(30, 41, 59, 0.65);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    background: linear-gradient(135deg, rgba(2, 50, 100, 0.4), rgba(0, 100, 150, 0.2));
+    border: 1px solid rgba(0, 168, 204, 0.1);
     font-size: 0.95rem;
+    color: #a8d8f0;
+    transition: all 0.2s ease;
+}
+
+.favorites-list li:hover {
+    background: linear-gradient(135deg, rgba(2, 50, 100, 0.6), rgba(0, 100, 150, 0.35));
+    border-color: rgba(0, 168, 204, 0.3);
+    transform: translateX(5px);
 }
 
 .peak-genre {
     margin-top: 1rem;
     padding: 0.75rem 1rem;
     border-radius: 12px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    background: rgba(30, 41, 59, 0.6);
+    border-left: 3px solid #0088bb;
+    border: 1px solid rgba(0, 168, 204, 0.15);
+    background: linear-gradient(135deg, rgba(2, 50, 100, 0.35), rgba(0, 100, 150, 0.15));
     font-size: 0.95rem;
     line-height: 1.6;
+    color: #a8d8f0;
 }
 
 .github-link {
-    color: #38bdf8;
-    font-weight: 600;
+    color: #0088bb;
+    font-weight: 700;
     text-decoration: none;
     padding: 0.25rem 0.6rem;
     border-radius: 9999px;
-    border: 1px solid rgba(56, 189, 248, 0.4);
+    border: 1px solid rgba(0, 168, 204, 0.4);
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+    background: rgba(0, 168, 204, 0.06);
+    transition: all 0.2s ease;
 }
 
 .github-link:hover {
-    background: rgba(56, 189, 248, 0.15);
+    background: rgba(0, 168, 204, 0.15);
+    box-shadow: 0 0 15px rgba(0, 168, 204, 0.25);
+    transform: translateY(-2px);
 }
 
 .nav-link {
     display: block;
     padding: 0.5rem 0.75rem;
     border-radius: 10px;
-    color: #cbd5f5;
+    color: #93c5fd;
     text-decoration: none;
     border: 1px solid transparent;
     transition: all 0.2s ease;
@@ -128,19 +157,20 @@ body.funny-theme {
 
 .nav-link:hover,
 .nav-link.active {
-    background: rgba(56, 189, 248, 0.15);
-    color: #e2e8f0;
-    border-color: rgba(56, 189, 248, 0.3);
+    background: rgba(0, 168, 204, 0.08);
+    color: #0088bb;
+    border-color: rgba(0, 168, 204, 0.25);
+    box-shadow: 0 0 10px rgba(0, 168, 204, 0.15);
 }
 
 .toc-link {
-    color: #94a3b8;
+    color: #93c5fd;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .toc-link:hover {
-    color: #e2e8f0;
+    color: #0088bb;
 }
 
 .jellyfin-container {
@@ -160,15 +190,16 @@ body.funny-theme {
     max-height: 320px;
     object-fit: contain;
     border-radius: 16px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(0, 168, 204, 0.15);
     padding: 1rem;
-    background: rgba(15, 23, 42, 0.7);
+    background: linear-gradient(135deg, rgba(2, 50, 100, 0.3), rgba(0, 100, 150, 0.1));
+    box-shadow: 0 0 20px rgba(0, 168, 204, 0.06);
 }
 
 .project-item {
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .project-item:last-child {
@@ -178,6 +209,8 @@ body.funny-theme {
 
 .subpage-container {
     text-align: center;
+    background: linear-gradient(135deg, rgba(0, 168, 204, 0.06), rgba(167, 139, 250, 0.02)) !important;
+    border: 1px solid rgba(0, 168, 204, 0.15) !important;
 }
 
 .subpage-btn {
@@ -185,30 +218,33 @@ body.funny-theme {
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.6rem 1.2rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 9999px;
-    background: #38bdf8;
-    color: #0f172a;
+    background: linear-gradient(135deg, #0088bb, #006688);
+    color: #e0f2f7;
     text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 168, 204, 0.4);
+    box-shadow: 0 0 20px rgba(0, 168, 204, 0.2);
 }
 
 .subpage-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(56, 189, 248, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 168, 204, 0.35);
 }
 
 .gallery-image {
     min-height: 260px;
     border-radius: 16px;
-    border: 1px dashed rgba(148, 163, 184, 0.3);
-    background: rgba(15, 23, 42, 0.45);
+    border: 2px solid rgba(0, 168, 204, 0.12);
+    background: linear-gradient(135deg, rgba(2, 50, 100, 0.25), rgba(0, 100, 150, 0.1));
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 1rem;
+    box-shadow: inset 0 0 30px rgba(0, 168, 204, 0.05);
 }
 
 @media (min-width: 768px) {
@@ -223,10 +259,11 @@ body.funny-theme {
     max-height: 420px;
     object-fit: cover;
     border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 168, 204, 0.15);
 }
 
 .placeholder-image {
-    color: #94a3b8;
+    color: #7ab8e6;
     font-size: 0.95rem;
 }
 
@@ -237,22 +274,27 @@ body.funny-theme {
     justify-content: center;
     padding: 0.6rem 1.2rem;
     border-radius: 9999px;
-    border: 1px solid rgba(56, 189, 248, 0.4);
-    background: rgba(56, 189, 248, 0.1);
-    color: #e2e8f0;
-    font-weight: 600;
+    border: 1px solid rgba(0, 168, 204, 0.4);
+    background: rgba(0, 168, 204, 0.08);
+    color: #0066aa;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 168, 204, 0.08);
 }
 
 .gallery-btn:hover,
 .close-btn:hover {
-    background: rgba(56, 189, 248, 0.25);
+    background: rgba(0, 168, 204, 0.15);
+    border-color: rgba(0, 168, 204, 0.7);
+    box-shadow: 0 0 25px rgba(0, 168, 204, 0.3);
+    transform: translateY(-2px);
 }
 
 .quote-section {
     font-style: italic;
-    color: #cbd5f5;
+    color: #93c5fd;
+    font-size: 1.1rem;
 }
 
 .easter-egg-modal {
@@ -262,11 +304,12 @@ body.funny-theme {
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    background: rgba(2, 6, 23, 0.75);
+    background: rgba(2, 6, 23, 0.9);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
     z-index: 50;
+    backdrop-filter: blur(4px);
 }
 
 .easter-egg-modal.show {
@@ -275,18 +318,20 @@ body.funny-theme {
 }
 
 .easter-egg-content {
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(56, 189, 248, 0.4);
+    background: linear-gradient(135deg, rgba(6, 20, 40, 0.95), rgba(3, 40, 75, 0.8));
+    border: 2px solid rgba(0, 168, 204, 0.35);
     border-radius: 20px;
     padding: 1.5rem;
     text-align: center;
     max-width: 420px;
     width: 100%;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6);
+    box-shadow: 0 20px 60px rgba(0, 168, 204, 0.12), inset 0 1px 0 rgba(0, 168, 204, 0.12);
+    backdrop-filter: blur(10px);
 }
 
 .cat-gif {
     width: 100%;
     border-radius: 16px;
     margin: 1rem 0;
+    box-shadow: 0 0 30px rgba(0, 168, 204, 0.15);
 }

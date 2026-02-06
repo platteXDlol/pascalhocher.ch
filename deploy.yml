@@ -1,0 +1,34 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+      - entw
+
+jobs:
+  deploy-main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Production
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER_MAIN }}
+          password: ${{ secrets.FTP_PASSWORD_MAIN }}
+          server-dir: ./ # Da der User meist direkt in public_html landet
+
+  deploy-entw:
+    if: github.ref == 'refs/heads/entw'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Staging
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER_ENTW }}
+          password: ${{ secrets.FTP_PASSWORD_ENTW }}
+          server-dir: ./ # Der neue User startet meist direkt im entw-Ordner

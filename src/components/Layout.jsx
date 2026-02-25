@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { Github, Mail } from 'lucide-react'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -19,7 +20,7 @@ export default function Layout() {
             Pascal Hocher
           </NavLink>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             {links.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -30,7 +31,7 @@ export default function Layout() {
                   <Button
                     variant={isActive ? 'default' : 'ghost'}
                     size="sm"
-                    className={cn('rounded-full text-xs', isActive && 'pointer-events-none')}
+                    className={cn('rounded-full', isActive && 'pointer-events-none')}
                   >
                     {label}
                   </Button>
@@ -48,11 +49,24 @@ export default function Layout() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="py-8 text-center">
-        <Separator className="mb-8" />
-        <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} Pascal Hocher
-        </p>
+      <footer className="border-t border-border">
+        <div className="mx-auto max-w-5xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} Pascal Hocher &middot; Applikationsentwickler
+          </p>
+          <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" asChild className="h-10 w-10 rounded-full">
+              <a href="https://github.com/platteXDlol" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <Github className="h-[18px] w-[18px]" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild className="h-10 w-10 rounded-full">
+              <a href="mailto:mail@pascalhocher.ch" aria-label="E-Mail">
+                <Mail className="h-[18px] w-[18px]" />
+              </a>
+            </Button>
+          </div>
+        </div>
       </footer>
     </div>
   )

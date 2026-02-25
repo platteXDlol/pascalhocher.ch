@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import { FadeIn } from '@/components/FadeIn'
 import { ArrowLeft, Server, MonitorCog, Laptop, Network } from 'lucide-react'
 
 const servers = [
@@ -58,45 +59,49 @@ export default function Specs() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
       {/* ── Header ── */}
-      <div className="mb-16">
-        <Button variant="ghost" size="sm" asChild className="mb-6 -ml-3 text-muted-foreground">
-          <Link to="/">
-            <ArrowLeft className="mr-1 h-4 w-4" /> Zurück
-          </Link>
-        </Button>
-        <Badge variant="secondary" className="mb-4">Homelab</Badge>
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-          Specs &amp; Setup
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-          Drei Maschinen, ein Netzwerk — mein Homelab für Media-Streaming,
-          AI-Experimente und Entwicklung.
-        </p>
-      </div>
+      <FadeIn>
+        <div className="mb-16">
+          <Button variant="ghost" size="sm" asChild className="mb-6 -ml-3 text-muted-foreground">
+            <Link to="/">
+              <ArrowLeft className="mr-1 h-4 w-4" /> Zurück
+            </Link>
+          </Button>
+          <Badge variant="secondary" className="mb-4">Homelab</Badge>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+            Specs &amp; Setup
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+            Drei Maschinen, ein Netzwerk — mein Homelab für Media-Streaming,
+            AI-Experimente und Entwicklung.
+          </p>
+        </div>
+      </FadeIn>
 
       {/* ── Server cards ── */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
-        {servers.map((server) => (
-          <Card key={server.name} className="transition-all duration-200 hover:shadow-md">
-            <CardHeader className="pb-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground">
-                  {server.icon}
+        {servers.map((server, i) => (
+          <FadeIn key={server.name} delay={i * 120}>
+            <Card className="transition-all duration-200 hover:shadow-md h-full">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground">
+                    {server.icon}
+                  </div>
+                  <div>
+                    <CardTitle className="text-sm">{server.name}</CardTitle>
+                    <CardDescription className="text-[11px]">{server.role}</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-sm">{server.name}</CardTitle>
-                  <CardDescription className="text-[11px]">{server.role}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="divide-y divide-border">
+                  {server.specs.map(({ label, value }) => (
+                    <SpecRow key={label} label={label} value={value} />
+                  ))}
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="divide-y divide-border">
-                {server.specs.map(({ label, value }) => (
-                  <SpecRow key={label} label={label} value={value} />
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </FadeIn>
         ))}
       </div>
 

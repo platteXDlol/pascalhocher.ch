@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { NavLink, Link, Outlet } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { Github, Mail } from 'lucide-react'
+import BootSequence from './BootSequence'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -13,8 +15,11 @@ const links = [
 ]
 
 export default function Layout() {
+  const [showBoot, setShowBoot] = useState(false)
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {showBoot && <BootSequence onComplete={() => setShowBoot(false)} />}
       {/* ── Navbar ── */}
       <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl border-b border-border">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 h-16">
@@ -59,6 +64,13 @@ export default function Layout() {
             <Link to="/impressum" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
               Impressum
             </Link>
+            <span>&middot;</span>
+            <button
+              onClick={() => setShowBoot(true)}
+              className="hover:text-foreground transition-colors underline-offset-4 hover:underline"
+            >
+              reboot
+            </button>
           </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" asChild className="h-10 w-10 rounded-full">

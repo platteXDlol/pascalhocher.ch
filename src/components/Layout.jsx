@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Link, Outlet } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -7,7 +7,8 @@ import { Github, Mail } from 'lucide-react'
 
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/specs', label: 'Homelab Specs' },
+  { to: '/projekte', label: 'Projekte' },
+  { to: '/specs', label: 'Specs' },
 ]
 
 export default function Layout() {
@@ -51,9 +52,13 @@ export default function Layout() {
       {/* ── Footer ── */}
       <footer className="border-t border-border">
         <div className="mx-auto max-w-5xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Pascal Hocher &middot; Applikationsentwickler
-          </p>
+          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <span>&copy; {new Date().getFullYear()} Pascal Hocher</span>
+            <span>&middot;</span>
+            <Link to="/impressum" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+              Impressum
+            </Link>
+          </div>
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" asChild className="h-10 w-10 rounded-full">
               <a href="https://github.com/platteXDlol" target="_blank" rel="noreferrer" aria-label="GitHub">

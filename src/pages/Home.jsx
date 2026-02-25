@@ -22,20 +22,17 @@ const projects = [
   {
     icon: <Cpu className="h-5 w-5 text-muted-foreground" />,
     title: 'Jellyfin & *arr-Stack',
-    description: 'Skalierbarer Media-Server mit Jellyfin, Sonarr, Radarr und Prowlarr. Fokus auf Automation, Zuverlässigkeit German und French Content.',
-    badges: ['Docker', 'Jellyfin', 'Sonarr'],
+    description: 'Automatisierter Media-Server für Filme & Serien.',
   },
   {
     icon: <BrainCircuit className="h-5 w-5 text-muted-foreground" />,
     title: 'Local AI',
-    description: 'Lokale AI-Workloads im Homelab — Experimente mit Modellen, Buttler, Automation und Bildergenerierung.',
-    badges: ['Ollama', 'Open WebUI'],
+    description: 'KI-Modelle lokal im Homelab betreiben.',
   },
   {
     icon: <Ghost className="h-5 w-5 text-muted-foreground" />,
     title: "Pepper's Ghost Display",
-    description: 'Geplant: Holographisches Display mit Raspberry Pi, eventuell mit lokaler AI-Integration.',
-    badges: ['Raspberry Pi', 'Geplant'],
+    description: 'Holographisches Display als Future-Projekt.',
   },
 ]
 
@@ -104,31 +101,32 @@ export default function Home() {
       {/* ── Projekte ── */}
       <FadeIn>
         <div className="mb-20">
-          <Badge variant="secondary" className="mb-6">Projekte</Badge>
+          <div className="flex items-center justify-between mb-6">
+            <Badge variant="secondary">Projekte</Badge>
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/projekte" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                Alle ansehen <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
+          </div>
 
-          <div className="space-y-3">
-            {projects.map(({ icon, title, description, badges }, i) => (
-              <FadeIn key={title} delay={i * 100}>
-                <Card className="transition-all duration-200 hover:shadow-md">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary">
+          <div className="space-y-2">
+            {projects.map(({ icon, title, description }, i) => (
+              <FadeIn key={title} delay={i * 80}>
+                <Link to="/projekte">
+                  <Card className="transition-all duration-200 hover:shadow-md hover:border-foreground/20 cursor-pointer">
+                    <CardContent className="flex items-center gap-4 p-4">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary shrink-0">
                         {icon}
                       </div>
-                      <CardTitle className="text-sm">{title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
-                    {badges && (
-                      <div className="flex flex-wrap gap-1.5 mt-3">
-                        {badges.map((b) => (
-                          <Badge key={b} variant="outline" className="text-[10px] font-normal">{b}</Badge>
-                        ))}
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-foreground">{title}</p>
+                        <p className="text-xs text-muted-foreground truncate">{description}</p>
                       </div>
-                    )}
-                  </CardContent>
-                </Card>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0 ml-auto" />
+                    </CardContent>
+                  </Card>
+                </Link>
               </FadeIn>
             ))}
           </div>

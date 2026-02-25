@@ -9,6 +9,7 @@ const links = [
   { to: '/', label: 'Home' },
   { to: '/projekte', label: 'Projekte' },
   { to: '/specs', label: 'Specs' },
+  { to: '/netzwerk', label: 'Netzwerk' },
 ]
 
 export default function Layout() {

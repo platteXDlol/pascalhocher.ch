@@ -1,8 +1,25 @@
-/node_modules
-/package-lock.json
-/package.json
-/postcss.config.js
-/public
-/src
-/tailwind.config.js
-/vite.config.js
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
